@@ -1,5 +1,5 @@
 CXX 			= g++
-CXXFLAGS		= -Wall -O2 -std=gnu++11 -D _GRADUAL_CHANGE -g
+CXXFLAGS		= -Wall -O2 -std=gnu++11 -D _GRADUAL_CHANGE
 LDFLAGS			=
 
 SOURCES			= $(wildcard *.cc)
