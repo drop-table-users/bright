@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 		throw std::runtime_error("Exactly one argument required!");
 
 	const char* arg = argv[1];
-	if (*arg == 'c') {
+	if (!strcmp(arg, "c")) {
 		cout << 100 * (float)(current_bright()) / max_bright() << endl;
 		return 0;
 	}
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 
 	double arg_perc = strtod(clean_arg, NULL) / 100;
 
-	if (arg_perc == 0 && *clean_arg != '0')
+	if (arg_perc == 0 && strcmp(clean_arg, "0"))
 		throw std::runtime_error("Invalid argument.");
 
 	ulong new_bright = round(arg_perc * max_bright());
