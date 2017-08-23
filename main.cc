@@ -10,8 +10,8 @@ using std::cout;
 using std::endl;
 
 int main(int argc, char** argv) {
-    if (argc != 2)
-        throw std::runtime_error("Exactly one argument required!");
+	if (argc != 2)
+		throw std::runtime_error("Exactly one argument required!");
 
 	const char* arg = argv[1];
 	if (*arg == 'c') {
@@ -37,11 +37,11 @@ int main(int argc, char** argv) {
 
 	ulong new_bright = round(arg_perc * max_bright());
 
-	#ifdef _GRADUAL_CHANGE
-    gradual_set_bright(current_bright(), new_bright);
-	#else
+#ifdef _GRADUAL_CHANGE
+	gradual_set_bright(current_bright(), new_bright);
+#else
 	set_bright(new_bright);
-	#endif
+#endif
 
-    return 0;
+	return 0;
 }
